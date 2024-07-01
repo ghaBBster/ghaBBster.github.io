@@ -1,12 +1,8 @@
 ---
 layout: post
-title:  "Здорова, работяги!"
+title:  "Hello World!"
 date:   2024-07-01 01:56:57 +0000
-categories: jekyll update
+categories: test
 ---
-Это мой первый сайт и первый пост в нём, пожелайте мне удачи!
-
----
-
-contact: +77769997614
+Just testing and messing around)
 
