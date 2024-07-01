@@ -1,10 +1,10 @@
 ---
 layout: page
-title: WTF
+title: About Me
 permalink: /about/
 ---
 
-# About Me
+About Me
 
 Welcome to my personal website. Here is a bit about me.
 
