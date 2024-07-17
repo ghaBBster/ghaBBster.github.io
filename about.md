@@ -1,6 +1,6 @@
 # This is Monitoring setup in my Linux Ubuntu VM
-# ![logs monitoring](https://imgur.com/cfhBo8K)
+# ![logs monitoring](https://i.imgur.com/cfhBo8K.jpeg)
 # ![monitoring 2](https://i.imgur.com/Aa9sbrh.jpeg)
-# ![Monitoring ProLUG Linux Grafana](https://imgur.com/Qm2SNQK)
-# ![Monitoring visualization Grafana](https://imgur.com/S1tt6vU)
-# ![CPU dashboard](https://imgur.com/AZsiywt).
+# ![Monitoring ProLUG Linux Grafana](https://i.imgur.com/Qm2SNQK.jpeg)
+# ![Monitoring visualization Grafana](https://i.imgur.com/S1tt6vU.jpeg)
+# ![CPU dashboard](https://i.imgur.com/AZsiywt.jpeg).
