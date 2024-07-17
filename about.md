@@ -3,4 +3,4 @@
 # ![monitoring 2](https://i.imgur.com/Aa9sbrh.jpeg)
 # ![Monitoring ProLUG Linux Grafana](https://i.imgur.com/Qm2SNQK.jpeg)
 # ![Monitoring visualization Grafana](https://i.imgur.com/S1tt6vU.jpeg)
-# ![CPU dashboard](https://i.imgur.com/AZsiywt.jpeg).
+# ![CPU dashboard](https://i.imgur.com/AZsiywt.jpeg)
