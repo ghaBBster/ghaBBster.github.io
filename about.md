@@ -148,22 +148,6 @@ def automated_scan():
 
 ---
 
-## 📊 Career Progression
-
-```
-2022        2023        2024        Future
- |           |           |           |
- |           |           |           |
-IT Support  Security    Security    Systems
-Specialist  Analyst     Specialist  Administrator
-(Intern)    (EPAM)     (ASBIS)     (Target Role)
- |           |           |           |
-Foundation  SIEM &      Leadership  Comprehensive
-Experience  Automation  & Training  IT Management
-```
-
----
-
 ## 📈 Projects & Achievements
 
 ### 🔍 Enterprise Vulnerability Management
