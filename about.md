@@ -186,10 +186,10 @@ Experience  Automation  & Training  IT Management
 ## 🤝 Let's Connect
 
 ### Contact Information
-- **📧 Email**: [your.email@example.com](mailto:your.email@example.com)
+- **📧 Email**: [ghabbster@proton.me](mailto:ghabbster@proton.me)
 - **💼 LinkedIn**: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
 - **🐙 GitHub**: [github.com/ghabbster](https://github.com/ghabbster)
-- **📱 Phone**: +1 (234) 567-8900
+- **📱 Phone**: +7 (776) 999-7614
 - **📍 Location**: Kostanay, Kazakhstan
 
 ### Professional Interests
