@@ -200,7 +200,7 @@ Comprehensive IT management combining security expertise with infrastructure adm
 ## Contact Information
 
 **Email**: ghabbster@proton.me  
-**LinkedIn**: [linkedin.com/in/yourprofile](https://www.linkedin.com/in/ghabbster/)  
+**LinkedIn**: [linkedin.com/in/ghabbster](https://www.linkedin.com/in/ghabbster/)  
 **GitHub**: github.com/ghabbster  
 **Phone**: +7 (776) 999-7614  
 **Location**: Kostanay, Kazakhstan
