@@ -1,22 +1,22 @@
-# IT Systems & Security Professional Portfolio
+# IT Systems & Security Professional
 
 > Transforming digital infrastructure with expertise in cybersecurity, system administration, and innovative solutions
 
 ---
 
-## 👨‍💻 About Me
+## About
 
 **Experienced IT professional** with a strong background in cybersecurity and systems administration. I specialize in vulnerability assessment, security monitoring, and implementing robust IT infrastructure solutions.
 
-With hands-on experience in SIEM tools, penetration testing, and endpoint protection, I bring a **security-first approach** to system administration. My goal is to build resilient IT environments that protect organizations while enabling productivity.
+With hands-on experience in SIEM tools, penetration testing, and endpoint protection, I bring a security-first approach to system administration. My goal is to build resilient IT environments that protect organizations while enabling productivity.
 
-I'm passionate about continuous learning, automation, and mentoring the next generation of IT professionals. Currently seeking opportunities to leverage my cybersecurity expertise in comprehensive systems administration roles.
+I am passionate about continuous learning, automation, and mentoring the next generation of IT professionals. Currently seeking opportunities to leverage my cybersecurity expertise in comprehensive systems administration roles.
 
 ---
 
-## 🛠️ Technical Skills
+## Technical Skills
 
-### 🔒 Security & Monitoring
+### Security & Monitoring
 - SIEM Tools (Splunk)
 - Vulnerability Assessment
 - Penetration Testing
@@ -24,7 +24,7 @@ I'm passionate about continuous learning, automation, and mentoring the next gen
 - Security Awareness Training
 - Incident Response
 
-### 🖥️ Systems Administration
+### Systems Administration
 - Windows Server & Client OS
 - Active Directory Management
 - Network Infrastructure
@@ -32,7 +32,7 @@ I'm passionate about continuous learning, automation, and mentoring the next gen
 - IT Asset Management
 - Documentation & Processes
 
-### 🌐 Networking & Protocols
+### Networking & Protocols
 - TCP/IP, DNS, DHCP
 - VPN & VLANs
 - Firewalls & Security
@@ -40,7 +40,7 @@ I'm passionate about continuous learning, automation, and mentoring the next gen
 - Routing & Switching
 - Wireless Technologies
 
-### 💻 Development & Automation
+### Development & Automation
 - Python Scripting
 - Process Automation
 - ITIL Framework
@@ -50,157 +50,171 @@ I'm passionate about continuous learning, automation, and mentoring the next gen
 
 ---
 
-## 💼 Professional Experience
+## Professional Experience
 
 ### Information Security Specialist
-**ASBIS Kazakhstan, ТОО** | *January 2023 — October 2023*
+**ASBIS Kazakhstan, TOO** | January 2023 — October 2023
 
-- Conducted **monthly vulnerability assessments** across enterprise infrastructure
-- Led **EDR solution implementation** reducing malware incidents significantly
-- Spearheaded **security awareness training program** for 200+ employees
-- Implemented proactive security measures improving organizational security posture
+Conducted monthly vulnerability assessments across enterprise infrastructure, led EDR solution implementation reducing malware incidents significantly, and spearheaded security awareness training program for 200+ employees. Implemented proactive security measures improving organizational security posture.
 
-### Cyber Security Analyst  
-**Epam Kazakhstan** | *September 2022 — January 2023*
+### Cyber Security Analyst
+**EPAM Kazakhstan** | September 2022 — January 2023
 
-- Monitored **20,000 monthly security events** using Splunk SIEM platform
-- **Reduced incident response time by 50%** through process optimization
-- Conducted penetration tests discovering **4 critical vulnerabilities**
-- **Automated vulnerability scanning with Python** decreasing scanning time by 60%
+Monitored 20,000 monthly security events using Splunk SIEM platform and reduced incident response time by 50% through process optimization. Conducted penetration tests discovering 4 critical vulnerabilities and automated vulnerability scanning with Python, decreasing scanning time by 60%.
 
 ### IT Support Specialist (Internship)
-**SIMUR** | *2022*
+**SIMUR** | 2022
 
-- Provided comprehensive technical support for hardware and software issues
-- Maintained system uptime and performance across multiple environments
-- Gained foundational experience in network administration and access control
-- Resolved complex technical problems improving user productivity
+Provided comprehensive technical support for hardware and software issues, maintained system uptime and performance across multiple environments. Gained foundational experience in network administration and access control while resolving complex technical problems to improve user productivity.
 
 ---
 
-## 🎯 Key Achievements
+## Key Achievements
 
-| Metric | Achievement | Impact |
-|--------|-------------|--------|
-| **Security Events** | Monitored 20,000+ monthly | 50% faster response times |
-| **Vulnerability Discovery** | Found 4 critical issues | Prevented potential breaches |
-| **Process Automation** | Python scanning scripts | 60% time reduction |
-| **Training Program** | Security awareness initiative | Reduced malware incidents |
+**Security Operations**
+- Monitored 20,000+ monthly security events with 50% faster response times
+- Discovered 4 critical vulnerabilities through systematic penetration testing
+- Reduced malware incidents through comprehensive EDR implementation
+
+**Process Improvement**
+- Automated vulnerability scanning processes achieving 60% time reduction
+- Developed Python scripts for enhanced scanning accuracy and consistency
+- Created security awareness training program with measurable incident reduction
+
+**Technical Leadership**
+- Led cross-functional teams in enterprise security solution deployment
+- Mentored junior staff in security best practices and technical procedures
+- Documented processes and procedures improving team efficiency
 
 ---
 
-## 🎓 Education & Certifications
+## Education & Certifications
 
 ### Education
-- **Bachelor's Degree** in Computer Science / Information Technology *(Expected)*
+Bachelor's Degree in Computer Science / Information Technology (Expected)
 
 ### Professional Development
-- **ITIL Foundation** - IT Service Management Best Practices
-- **Cybersecurity Analyst** Training - Hands-on SIEM and Incident Response
-- **Network Administration** - Infrastructure Management and Troubleshooting
+- ITIL Foundation - IT Service Management Best Practices
+- Cybersecurity Analyst Training - Hands-on SIEM and Incident Response
+- Network Administration - Infrastructure Management and Troubleshooting
 
 ---
 
-## 🔧 Technical Proficiencies
+## Technical Proficiencies
 
 ### Security Tools
 ```
-✓ Splunk SIEM Platform
-✓ Endpoint Detection & Response (EDR)
-✓ Vulnerability Assessment Tools
-✓ Penetration Testing Frameworks
-✓ Network Security Monitoring
+Splunk SIEM Platform
+Endpoint Detection & Response (EDR)
+Vulnerability Assessment Tools
+Penetration Testing Frameworks
+Network Security Monitoring
 ```
 
 ### System Administration
 ```
-✓ Windows Server 2016/2019/2022
-✓ Active Directory & Group Policy
-✓ PowerShell Automation
-✓ Network Infrastructure Management
-✓ IT Service Management (ITSM)
+Windows Server 2016/2019/2022
+Active Directory & Group Policy
+PowerShell Automation
+Network Infrastructure Management
+IT Service Management (ITSM)
 ```
 
 ### Programming & Automation
 ```python
-# Example: Automated vulnerability scanning
-def automated_scan():
-    scan_results = []
-    for target in network_targets:
-        result = vulnerability_scanner.scan(target)
-        scan_results.append(result)
-    generate_report(scan_results)
-    return scan_results
+# Automated vulnerability scanning framework
+def vulnerability_assessment():
+    targets = discover_network_assets()
+    results = []
+    
+    for target in targets:
+        scan_data = perform_vulnerability_scan(target)
+        risk_assessment = analyze_vulnerabilities(scan_data)
+        results.append(risk_assessment)
+    
+    generate_executive_report(results)
+    return results
 ```
 
 ---
 
-## 🌟 Professional Highlights
+## Notable Projects
 
-### Security Leadership
-> Successfully implemented enterprise-wide EDR solution, leading cross-functional teams and reducing security incidents by implementing comprehensive monitoring and response procedures.
+### Enterprise Vulnerability Management System
+**Challenge**: Manual vulnerability assessments were time-consuming and inconsistent across the organization.
 
-### Process Improvement
-> Developed Python automation scripts that transformed manual vulnerability assessment processes, achieving 60% efficiency gains while improving accuracy and consistency.
+**Solution**: Developed automated Python scanning framework with standardized reporting and risk prioritization.
 
-### Mentorship & Training
-> Designed and delivered security awareness training programs, educating staff on cybersecurity best practices and significantly reducing human-factor security incidents.
+**Result**: Achieved 60% reduction in assessment time while improving accuracy and providing consistent, actionable reports.
 
----
+### Security Incident Response Optimization
+**Challenge**: High volume of security events (20,000/month) was causing alert fatigue and delayed responses.
 
-## 📈 Projects & Achievements
+**Solution**: Implemented Splunk-based automated filtering, correlation rules, and prioritization workflows.
 
-### 🔍 Enterprise Vulnerability Management
-- **Challenge**: Manual vulnerability assessments were time-consuming and inconsistent
-- **Solution**: Developed automated Python scanning framework
-- **Result**: 60% reduction in assessment time, improved accuracy and reporting
+**Result**: Reduced incident response time by 50% and significantly decreased false positive alerts.
 
-### 🛡️ Security Incident Response Optimization
-- **Challenge**: High volume of security events (20,000/month) causing alert fatigue
-- **Solution**: Implemented Splunk-based automated filtering and prioritization
-- **Result**: 50% faster response times, reduced false positives
+### Security Awareness Training Program
+**Challenge**: Employees lacked cybersecurity awareness, leading to preventable security incidents.
 
-### 📚 Security Awareness Program
-- **Challenge**: Employees lacked cybersecurity awareness leading to incidents
-- **Solution**: Created comprehensive training curriculum and delivery program
-- **Result**: Measurable reduction in malware incidents and improved security culture
+**Solution**: Created comprehensive training curriculum with practical exercises and regular assessment.
+
+**Result**: Measurable reduction in malware incidents and improved organizational security culture.
 
 ---
 
-## 🤝 Let's Connect
+## Career Progression
 
-### Contact Information
-- **📧 Email**: [ghabbster@proton.me](mailto:ghabbster@proton.me)
-- **💼 LinkedIn**: [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
-- **🐙 GitHub**: [github.com/ghabbster](https://github.com/ghabbster)
-- **📱 Phone**: +7 (776) 999-7614
-- **📍 Location**: Kostanay, Kazakhstan
+**2022** - IT Support Specialist (Intern) at SIMUR
+Foundation experience in technical support and network administration
 
-### Professional Interests
-- Enterprise IT Infrastructure
-- Cybersecurity & Risk Management  
-- Process Automation & Optimization
-- Team Leadership & Mentorship
-- Continuous Learning & Development
+**2022-2023** - Cyber Security Analyst at EPAM Kazakhstan
+Advanced SIEM operations, automation, and vulnerability assessment
+
+**2023** - Information Security Specialist at ASBIS Kazakhstan
+Leadership role in security implementation and team training
+
+**Future** - Systems Administrator (Target Role)
+Comprehensive IT management combining security expertise with infrastructure administration
 
 ---
 
-## 📋 Current Objectives
+## Professional Objectives
 
 **Seeking Systems Administrator Role** where I can leverage my cybersecurity background to build secure, efficient IT infrastructure while mentoring junior team members and driving organizational technology initiatives.
 
-### What I Bring:
-- **Security-First Mindset** in system design and implementation
-- **Proven Problem-Solving** abilities with quantified results
-- **Leadership Experience** in training and process improvement
-- **Technical Versatility** across security, networking, and system administration
+### Value Proposition
+- Security-first approach to system design and implementation
+- Proven problem-solving abilities with quantified results
+- Leadership experience in training and process improvement
+- Technical versatility across security, networking, and system administration
 
-### What I'm Looking For:
-- Opportunities to apply security expertise in comprehensive IT management
-- Collaborative environment with growth and learning opportunities
-- Role involving both technical challenges and team leadership
-- Organization that values security, efficiency, and professional development
+### Career Goals
+- Apply security expertise in comprehensive IT infrastructure management
+- Work in collaborative environment with growth and learning opportunities
+- Take on technical challenges while providing team leadership
+- Contribute to organizations that value security, efficiency, and professional development
 
 ---
 
-*Built with passion for technology and security • 2025*
+## Contact Information
+
+**Email**: your.email@example.com  
+**LinkedIn**: linkedin.com/in/yourprofile  
+**GitHub**: github.com/ghabbster  
+**Phone**: +1 (234) 567-8900  
+**Location**: Kostanay, Kazakhstan
+
+---
+
+## Professional Interests
+
+- Enterprise IT Infrastructure Design
+- Cybersecurity Risk Management
+- Process Automation and Optimization
+- Technical Team Leadership and Mentorship
+- Continuous Learning and Technology Innovation
+
+---
+
+*Professional Portfolio - 2025*
