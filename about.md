@@ -1,4 +1,4 @@
-# Entry-Level Reverse Engineer & Malware Analyst
+# Entry-Level Reverse Engineer / Malware Analyst
 
 ## Первые проекты под наставничеством
 
