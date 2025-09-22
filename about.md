@@ -1,4 +1,4 @@
-# Опыт работы: Entry-Level Reverse Engineer & Malware Analyst (6 месяцев)
+# Entry-Level Reverse Engineer & Malware Analyst
 
 ## Первые проекты под наставничеством
 
