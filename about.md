@@ -1,4 +1,4 @@
-# Work Experience: Entry-Level Reverse Engineer & Malware Analyst (6 months)
+# Work Experience: Entry-Level Reverse Engineer / Malware Analyst (6 months)
 
 ## First Projects Under Mentorship
 
