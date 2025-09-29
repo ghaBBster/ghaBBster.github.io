@@ -1,8 +1,4 @@
-# Work Experience: Entry-Level Reverse Engineer / Malware Analyst (6 months)
-
-## First Projects Under Mentorship
-
-### Project 1: Analysis of Simple Password Stealer "BasicGrab" (October 2024)
+## Project 1: Analysis of Simple Password Stealer "BasicGrab" (October 2024)
 
 **Task:** First real analysis under senior analyst supervision - simple browser password stealer.
 
