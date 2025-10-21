@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rustam - Malware Analyst & Reverse Engineer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #0A0E27;
+            --secondary: #1A1F3A;
+            --accent: #00D9FF;
+            --text: #E8E9ED;
+            --text-muted: #A0A4B8;
+            --bg: #0F1419;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(15, 20, 25, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(0, 217, 255, 0.1);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+        }
+
+        nav .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: var(--text);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            padding-top: 80px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(0, 217, 255, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--text) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero .subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+        }
+
+        .hero .tagline {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: var(--bg);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 217, 255, 0.3);
+        }
+
+        .btn-secondary {
+            color: var(--accent);
+            border-color: var(--accent);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(0, 217, 255, 0.1);
+        }
+
+        /* Section Styles */
+        section {
+            padding: 6rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 1.5rem;
+            background: var(--secondary);
+            border-radius: 12px;
+            border: 1px solid rgba(0, 217, 255, 0.1);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Skills Section */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .skill-category {
+            background: var(--secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid rgba(0, 217, 255, 0.1);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 217, 255, 0.3);
+        }
+
+        .skill-category h3 {
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: rgba(0, 217, 255, 0.1);
+            color: var(--text);
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(0, 217, 255, 0.2);
+        }
+
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: var(--secondary);
+            border-radius: 12px;
+            padding: 2rem;
+            border: 1px solid rgba(0, 217, 255, 0.1);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 217, 255, 0.3);
+        }
+
+        .project-card h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .project-card p {
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .project-date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 0.5rem;
+        }
+
+        /* Contact Section */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-item {
+            background: var(--secondary);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(0, 217, 255, 0.1);
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 217, 255, 0.3);
+        }
+
+        .contact-item h3 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .contact-item a {
+            color: var(--text);
+            text-decoration: none;
+            word-break: break-word;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            padding: 2rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(0, 217, 255, 0.1);
+        }
+
+        footer p {
+            color: var(--text-muted);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Selection */
+        ::selection {
+            background: var(--accent);
+            color: var(--bg);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">R</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Rustam</h1>
+            <div class="subtitle">Malware Analyst & Reverse Engineer</div>
+            <p class="tagline">Specialized in reverse engineering, malware analysis, and kernel-level security research</p>
+            <div class="cta-buttons">
+                <a href="#contact" class="btn btn-primary">Get in Touch</a>
+                <a href="#projects" class="btn btn-secondary">View Work</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>I'm a dedicated reverse engineer and malware analyst with a passion for understanding how malicious software works at its core. My journey in cybersecurity has been driven by curiosity and a commitment to making systems more secure.</p>
+                    <p>From analyzing password stealers and unpacking obfuscated binaries to diving deep into Linux kernel rootkits, I've developed a comprehensive skill set in static and dynamic analysis.</p>
+                    <p>I also contribute to open-source kernel development, which deepens my understanding of OS internals and helps me better identify malicious system-level modifications.</p>
+                </div>
+                <div class="stats">
+                    <div class="stat-item">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Samples Analyzed</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Code Lines Contributed</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">6</span>
+                        <span class="stat-label">Months Experience</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">8</span>
+                        <span class="stat-label">Cases Documented</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Analysis Tools</h3>
+                    <div class="skill-tags">
+                        <span class="tag">IDA Pro</span>
+                        <span class="tag">x64DBG</span>
+                        <span class="tag">GDB</span>
+                        <span class="tag">Volatility</span>
+                        <span class="tag">Process Monitor</span>
+                        <span class="tag">PEStudio</span>
+                        <span class="tag">ftrace</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Programming</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">C/C++</span>
+                        <span class="tag">Assembly x86/x64</span>
+                        <span class="tag">PowerShell</span>
+                        <span class="tag">Bash</span>
+                        <span class="tag">YARA</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Specializations</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Malware Analysis</span>
+                        <span class="tag">Reverse Engineering</span>
+                        <span class="tag">Kernel Analysis</span>
+                        <span class="tag">Rootkit Detection</span>
+                        <span class="tag">PE Analysis</span>
+                        <span class="tag">Unpacking</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Malware Families</h3>
+                    <div class="skill-tags">
+                        <span class="tag">Password Stealers</span>
+                        <span class="tag">Downloaders</span>
+                        <span class="tag">PowerShell Malware</span>
+                        <span class="tag">Packed Samples</span>
+                        <span class="tag">Simple RATs</span>
+                        <span class="tag">LKM Rootkits</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <div class="container">
+            <h2 class="section-title">Recent Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-date">January 2025</div>
+                    <h3>Linux Kernel Rootkit Analysis</h3>
+                    <p>Analyzed loadable kernel module rootkit that hides processes and files. Identified syscall table hooking mechanisms and developed detection scripts.</p>
+                    <div class="skill-tags">
+                        <span class="tag">Kernel Analysis</span>
+                        <span class="tag">GDB</span>
+                        <span class="tag">ftrace</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-date">December 2024</div>
+                    <h3>PowerShell Obfuscation Analysis</h3>
+                    <p>Deobfuscated multi-level PowerShell loader with Base64 encoding and string manipulation. Extracted IOCs and analyzed download behavior.</p>
+                    <div class="skill-tags">
+                        <span class="tag">PowerShell</span>
+                        <span class="tag">Deobfuscation</span>
+                        <span class="tag">Dynamic Analysis</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-date">November 2024</div>
+                    <h3>UPX Unpacking</h3>
+                    <p>Manually unpacked UPX-protected binary using x64DBG. Successfully located OEP, dumped process, and reconstructed imports.</p>
+                    <div class="skill-tags">
+                        <span class="tag">Unpacking</span>
+                        <span class="tag">x64DBG</span>
+                        <span class="tag">PE Analysis</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-date">October 2024</div>
+                    <h3>Password Stealer Analysis</h3>
+                    <p>Analyzed browser password stealer targeting Chrome and Firefox. Documented API usage, behavior patterns, and generated IOCs.</p>
+                    <div class="skill-tags">
+                        <span class="tag">IDA Pro</span>
+                        <span class="tag">Process Monitor</span>
+                        <span class="tag">YARA</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-date">Ongoing</div>
+                    <h3>Custom Kernel Development</h3>
+                    <p>Contributing to educational microkernel project. Implemented process scheduling, system calls, and memory management features.</p>
+                    <div class="skill-tags">
+                        <span class="tag">C Programming</span>
+                        <span class="tag">OS Internals</span>
+                        <span class="tag">Assembly</span>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-date">Learning</div>
+                    <h3>Automation Tools</h3>
+                    <p>Developed Python scripts for hash extraction, string analysis, and VM automation to streamline analysis workflows.</p>
+                    <div class="skill-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Automation</span>
+                        <span class="tag">Scripting</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <h2 class="section-title">Get in Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <h3>Email</h3>
+                    <a href="mailto:rustamhitman@gmail.com">rustamhitman@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <h3>GitHub</h3>
+                    <a href="https://github.com/ghaBBster" target="_blank">@ghaBBster</a>
+                </div>
+                <div class="contact-item">
+                    <h3>Phone</h3>
+                    <a href="tel:+77769997614">+7 776 999 7614</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Rustam. Malware Analyst & Reverse Engineer.</p>
+        </div>
+    </footer>
+</body>
+</html>
