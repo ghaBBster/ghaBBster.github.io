@@ -4,7 +4,7 @@
 
 ### Project 1: Analysis of Simple Password Stealer "BasicGrab" (October 2024)
 
-**Task:** First real analysis under senior analyst supervision - simple browser password stealer.
+**Task:** Simple browser password stealer.
 
 **What I did:**
 - **Initial triage:** Used VirusTotal, checked basic PE properties in PEStudio
@@ -18,7 +18,7 @@
 
 **Challenges:** Got lost in assembly code, didn't immediately understand the connection between API calls and functionality. Mentor helped understand the call flow.
 
-**Result:** Created my first analysis report (8 pages) describing behavior and IOCs. Received feedback: *"Good attention to detail, but needs more practice with assembly."*
+**Result:** Created my first analysis report (2 pages) describing behavior and IOCs.
 
 ---
 
@@ -39,7 +39,7 @@
 
 **Challenges:** Got confused in debugger interface, didn't understand the difference between VA and RVA. Took several attempts and explanations.
 
-**Achievement:** Successfully unpacked first sample independently! Felt like a real reverse engineer.
+**Achievement:** Successfully unpacked first sample independently!
 
 ---
 
@@ -59,8 +59,7 @@
 
 **Learning curve:** First time working with PowerShell analysis. Spent a lot of time understanding PowerShell syntax and built-in functions.
 
-**Outcome:** Successfully deobfuscated script, extracted download URLs, created simple network IOCs. Mentor praised patience in manual deobfuscation.
-
+**Outcome:** Successfully deobfuscated script, extracted download URLs, created simple network IOCs.
 ---
 
 ### Project 4: Linux Kernel Rootkit Analysis (January 2025)
@@ -102,10 +101,8 @@ sys_call_table[__NR_getdents64] = (unsigned long *)hooked_getdents64;
 **Outcome:** 
 - Successfully identified hooking mechanisms and hidden processes
 - Created detection script that compares syscall table against known good values
-- Wrote 12-page technical report on rootkit functionality
-- Developed understanding of kernel-level malware that will help with future rootkit analysis
-
-**Mentor feedback:** *"Impressive for first kernel-level analysis. Good understanding of low-level concepts. Continue studying Linux kernel internals."*
+- Wrote 5-page technical report on rootkit functionality
+- Developed understanding of kernel-level malware that will help with future rootkit analysi
 
 ---
 
@@ -149,7 +146,7 @@ asmlinkage long sys_getpid(void) {
 - Familiarity with legitimate kernel operations helps spot malicious modifications
 - Experience with kernel debugging translates to rootkit dynamic analysis
 
-**Repository:** Contributing to open-source educational kernel project (500+ lines of code contributed)
+**Repository:** Contributing to open-source educational kernel project (200+ lines of code contributed)
 
 **Learning resources used:**
 - "Linux Kernel Development" by Robert Love
@@ -256,27 +253,6 @@ Simple scripts for routine VM tasks:
 
 ---
 
-## Feedback Received
-
-### From Senior Analyst:
-> - *"Shows good curiosity and willingness to learn"*
-> - *"Documentation skills improving rapidly"*
-> - *"Needs more practice with complex static analysis"*
-> - *"Good attention to detail in behavioral analysis"*
-
-### From Team Lead:
-> - *"Progressing well for entry level"*
-> - *"Should focus on fundamentals before advanced topics"*
-> - *"Good team player, asks intelligent questions"*
-
-### Self-assessment:
-- Feel progress, but understand there's still a lot I don't know
-- Sometimes overwhelmed by complex samples
-- Gaining confidence in basic tasks
-- Excited about learning more advanced techniques
-
----
-
 ## Near-term Goals (next 6 months)
 
 ### Technical Goals
@@ -299,57 +275,6 @@ Simple scripts for routine VM tasks:
 - **Hands-on practice:** Daily analysis on different malware types
 - **Certification prep:** Start preparing for entry-level certification
 - **Conference attendance:** Attend local security meetup
-
----
-
-## Motivation and Perspectives
-
-### Why I Chose This Field
-
-Always interested in cybersecurity, fascinated by reverse engineering process. Love the intellectual puzzle-solving aspect.
-
-### What I Enjoy Most
-
-- The moment when I finally understand how obfuscated code works
-- Satisfaction from successful unpacking
-- Team collaboration and knowledge sharing
-
-### Current Interests
-
-- Studying evolution of modern malware families
-- Reading threat intelligence reports
-- Following security researchers on Twitter
-
-### Long-term Vision
-
-- **In 1 year:** Want to become confident junior analyst
-- **In 2-3 years:** Specialize in advanced persistent threats or mobile malware analysis
-
-### Readiness to Grow
-
-Understand I'm at the very beginning of the learning curve, but motivated to continue development. Ready to invest time in continuous learning and practice.
-
----
-
-## Additional Activities
-
-### Community Involvement
-
-- Participate in local CTF events (mainly learning experience so far)
-- Read malware analysis blogs and Twitter feeds
-- Started keeping personal learning journal
-
-### Side Projects
-
-- Setting up home lab for personal practice
-- Planning to create malware analysis blog to document learning journey
-- Experimenting with different analysis tools and techniques
-
----
-
-## Conclusion
-
-Although experience is still limited, I'm motivated to continue learning and development in this fascinating field. Ready to take on challenges and grow as a professional under the guidance of an experienced team.
 
 ---
 
